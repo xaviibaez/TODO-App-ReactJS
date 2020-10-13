@@ -2,6 +2,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+Create React app:
+
+### `npx create-react-app todo_app`
+
+Firebase:
+
+### `npm install -g firebase-tools`
+
 In the project directory, you can run:
 
 ### `npm start`
