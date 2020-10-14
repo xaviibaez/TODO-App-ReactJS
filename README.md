@@ -6,9 +6,19 @@ Create React app:
 
 ### `npx create-react-app todo_app`
 
-Firebase:
+Firebase Install:
 
 ### `npm install -g firebase-tools`
+
+### `firebase login`
+
+Initiate your project:
+
+### `firebase init`
+
+Deploy web app:
+
+### `firebase deploy`
 
 In the project directory, you can run:
 
