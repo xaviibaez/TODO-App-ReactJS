@@ -29,12 +29,10 @@ function App() {
       <h1>To do</h1>
       {/* Lo ponemos en un form para asi poder dar enter */}
       <form>
-        {/* El value que tendra sera input - onChange se encarga de ir escuchando, cada vez que hay un cambio lo seteamos con setInput
-            Cada vez que se escribe una letra se actualiza y modifica el valor de input */}
-        {/*<input value={input} onChange={event => setInput(event.target.value)}/>*/}
-        
         <FormControl>
-          <InputLabel>Email address</InputLabel>
+          <InputLabel>New Task</InputLabel>
+            {/* El value que tendra sera input - onChange se encarga de ir escuchando, cada vez que hay un cambio lo seteamos con setInput
+              Cada vez que se escribe una letra se actualiza y modifica el valor de input */}
             <Input value={input} onChange={event => setInput(event.target.value)}/>
         </FormControl>
 
@@ -45,9 +43,8 @@ function App() {
         <Button disabled={!input} type="submit" onClick={addTodo} variant="contained" color="primary">
           Primary
         </Button>
-
-        {/*<button type="submit" onClick={addTodo}>Add Todo</button>*/}
       </form>
+
       {/* Iteramos el array Todos -> foreach - El objeto todo es cada uno de estos */}
       <ul>
         {todos.map(todo =>(
