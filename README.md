@@ -12,6 +12,10 @@ Firebase Install:
 
 ### `firebase login`
 
+Material UI:
+
+### `npm install @material-ui/core`
+
 Initiate your project:
 
 ### `firebase init`
