@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
+import Todo from './Todo';
 
 function App() {
   //Short time memory, al ser volvatil, cuando se añad contenido con el SetTodo, si no se envia a la bbdd se perdera.
@@ -48,7 +49,8 @@ function App() {
       {/* Iteramos el array Todos -> foreach - El objeto todo es cada uno de estos */}
       <ul>
         {todos.map(todo =>(
-          <li>{todo}</li>
+          //Le pasamos el todo que toque por parametro al componente Todo.js
+          <Todo text={todo} />
         ))}
       </ul>
     </div>
