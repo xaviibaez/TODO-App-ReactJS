@@ -25,7 +25,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hola Guapisimos</h1>
+      <h1>To do</h1>
+      {/* Lo ponemos en un form para asi poder dar enter */}
       <form>
         {/* El value que tendra sera input - onChange se encarga de ir escuchando, cada vez que hay un cambio lo seteamos con setInput
             Cada vez que se escribe una letra se actualiza y modifica el valor de input */}
