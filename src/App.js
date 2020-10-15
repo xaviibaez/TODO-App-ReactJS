@@ -26,15 +26,16 @@ function App() {
   return (
     <div className="App">
       <h1>Hola Guapisimos</h1>
-      {/* El value que tendra sera input - onChange se encarga de ir escuchando, cada vez que hay un cambio lo seteamos con setInput
-          Cada vez que se escribe una letra se actualiza y modifica el valor de input */}
-      <input value={input} onChange={event => setInput(event.target.value)}/>
-      
-      {/* Llamamos al metodo que se activa on click event 
-          El submit hara que se haga refresh
-      */}
-      <button type="submit" onClick={addTodo}>Add Todo</button>
-
+      <form>
+        {/* El value que tendra sera input - onChange se encarga de ir escuchando, cada vez que hay un cambio lo seteamos con setInput
+            Cada vez que se escribe una letra se actualiza y modifica el valor de input */}
+        <input value={input} onChange={event => setInput(event.target.value)}/>
+        
+        {/* Llamamos al metodo que se activa on click event 
+            El submit hara que se haga refresh
+        */}
+        <button type="submit" onKeyDownCapture={addTodo} onClick={addTodo}>Add Todo</button>
+      </form>
       {/* Iteramos el array Todos -> foreach - El objeto todo es cada uno de estos */}
       <ul>
         {todos.map(todo =>(
