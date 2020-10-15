@@ -1,11 +1,17 @@
+import { ListItem, ListItemAvatar, ListItemText } from '@material-ui/core'
 import React from 'react'
+import { List } from '@material-ui/core';
 
-//Props -> propiedades
+//Componente Todo
+//Props -> propiedades - Lo que nos viene de App.js en forma de parametro
 function Todo(props) {
     return (
-        <div>
-            <li>{props.text}</li>
-        </div>
+        <List>
+            <ListItem>
+                <ListItemAvatar></ListItemAvatar>
+                <ListItemText primary={props.text} secondary="TODO: remove" />
+            </ListItem>
+        </List>
     )
 }
 
