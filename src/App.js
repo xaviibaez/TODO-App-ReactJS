@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Button } from '@material-ui/core';
+import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
 
 function App() {
   //Short time memory, al ser volvatil, cuando se añad contenido con el SetTodo, si no se envia a la bbdd se perdera.
@@ -31,8 +31,13 @@ function App() {
       <form>
         {/* El value que tendra sera input - onChange se encarga de ir escuchando, cada vez que hay un cambio lo seteamos con setInput
             Cada vez que se escribe una letra se actualiza y modifica el valor de input */}
-        <input value={input} onChange={event => setInput(event.target.value)}/>
+        {/*<input value={input} onChange={event => setInput(event.target.value)}/>*/}
         
+        <FormControl>
+          <InputLabel>Email address</InputLabel>
+            <Input value={input} onChange={event => setInput(event.target.value)}/>
+        </FormControl>
+
         {/* Llamamos al metodo que se activa on click event 
             El submit hara que se haga refresh
             disabled !input para que no se pueda añadir un vacio " "
