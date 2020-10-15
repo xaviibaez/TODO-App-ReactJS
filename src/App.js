@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { Button } from '@material-ui/core';
 
 function App() {
   //Short time memory, al ser volvatil, cuando se añad contenido con el SetTodo, si no se envia a la bbdd se perdera.
@@ -34,8 +35,13 @@ function App() {
         
         {/* Llamamos al metodo que se activa on click event 
             El submit hara que se haga refresh
+            disabled !input para que no se pueda añadir un vacio " "
         */}
-        <button type="submit" onKeyDownCapture={addTodo} onClick={addTodo}>Add Todo</button>
+        <Button disabled={!input} type="submit" onClick={addTodo} variant="contained" color="primary">
+          Primary
+        </Button>
+
+        {/*<button type="submit" onClick={addTodo}>Add Todo</button>*/}
       </form>
       {/* Iteramos el array Todos -> foreach - El objeto todo es cada uno de estos */}
       <ul>
