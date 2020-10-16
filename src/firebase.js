@@ -29,4 +29,5 @@ const firebaseApp = firebase.initializeApp({
 const db = firebase.firestore();
 
 //Lo exportamos asi tenemos acceso a db des de cualquier lugar de la app
-export { db };
+//export { db };
+export default db;
