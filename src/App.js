@@ -32,7 +32,12 @@ function App() {
 
     //Añadimos el input a la list de todos con setTodo. los '...' son para no borrar lo que habia previamente
     //lista.add en java
-    setTodos([...todos, input]);
+    //setTodos([...todos, input]);
+
+    //Añadimos a la bbdd el input
+    db.collection('todos').add({
+      todo: input
+    })
 
     //Limpiamos el input
     setInput('')
