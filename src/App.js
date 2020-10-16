@@ -3,6 +3,7 @@ import './App.css';
 import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
 import Todo from './Todo';
 import db from './firebase'
+import firebase from 'firebase'
 
 function App() {
   //Short time memory, al ser volvatil, cuando se añad contenido con el SetTodo, si no se envia a la bbdd se perdera.
@@ -19,7 +20,7 @@ function App() {
     //Cuando la base de datos carge, actualizaremos los todos recogiendolos de la collecion que toque.
     //onSanpshot -> se lanzara cada vez que la bbdd se modifique
     //docs -> es cada uno de los valores de la bbdd
-    db.collection('todos').onSnapshot(snapshot => {
+    db.collection('todos').orderBy('timestamp','desc').onSnapshot(snapshot => {
       //doc.data() -> Array, doc.data().todo -> el valor
       setTodos(snapshot.docs.map(doc => doc.data().todo));
     })
@@ -34,9 +35,10 @@ function App() {
     //lista.add en java
     //setTodos([...todos, input]);
 
-    //Añadimos a la bbdd el input
+    //Añadimos a la bbdd el input - el tiempo cuando se hace el insert
     db.collection('todos').add({
-      todo: input
+      todo: input,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
 
     //Limpiamos el input
