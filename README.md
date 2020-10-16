@@ -10,9 +10,27 @@ Firebase Install:
 
 ### `npm install -g firebase-tools`
 
+### `npm i firebase`
+
+Hacemos login con nuestra cuenta de google donde tenemos el proyecto
+
 ### `firebase login`
 
-### `npm i firebase`
+En la carpeta del proyecto, ejecutamos para la configuracion
+- Hosting: Configure and deploy Firebase Hosting sites
+- Use an existing project
+
+En los archivos .firebaserc y firebase.json podemos modificar estas opciones
+
+### `firebase init`
+
+Create build
+
+### `npm run build` 
+
+Deploy on firebase
+
+### `firebase deploy`
 
 Material UI:
 
