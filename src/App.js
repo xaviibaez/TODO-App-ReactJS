@@ -1,16 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Button, FormControl, Input, InputLabel } from '@material-ui/core';
 import Todo from './Todo';
+import db from './firebase'
 
 function App() {
   //Short time memory, al ser volvatil, cuando se añad contenido con el SetTodo, si no se envia a la bbdd se perdera.
   //Todos es el array con todas las task
   //SetTodos es la variable que usaremos para añadir task a Todos
-  const [todos, setTodos] = useState(['task 0', 'task 1', 'task 2'])
+  const [todos, setTodos] = useState([])
 
   //Lo que se ponga en el pinput para añadirlo a la lista
   const [input, setInput] = useState('')
+
+  //Use effect es una funcion que carga los datos por primera vez cuando se entra en el componente 
+  //y cada vez que el valor del segundo parametro es modificado
+  useEffect(() => {
+    //Cuando la base de datos carge, actualizaremos los todos recogiendolos de la collecion que toque.
+    //onSanpshot -> se lanzara cada vez que la bbdd se modifique
+    //docs -> es cada uno de los valores de la bbdd
+    db.collection('todos').onSnapshot(snapshot => {
+      //doc.data() -> Array, doc.data().todo -> el valor
+      setTodos(snapshot.docs.map(doc => doc.data().todo));
+    })
+  }, []);
 
   //Esto se activara cuando le demos click al boton.
   const addTodo = (event) => {

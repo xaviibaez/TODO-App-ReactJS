@@ -26,7 +26,7 @@ const firebaseApp = firebase.initializeApp({
 });
 
 //Con esta constante conectamos a la bd de firebase y lo guardamos todo en el objeto db
-const db = firebase.firestore();
+const db = firebaseApp.firestore();
 
 //Lo exportamos asi tenemos acceso a db des de cualquier lugar de la app
 //export { db };
