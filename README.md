@@ -32,9 +32,13 @@ Deploy on firebase
 
 ### `firebase deploy`
 
+### `npm run build && firebase deploy`
+
 Material UI:
 
 ### `npm install @material-ui/core`
+
+Material UI icons:
 
 ### `npm i @material-ui/icons`
 

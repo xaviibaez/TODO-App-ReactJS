@@ -1,4 +1,5 @@
-import { Button, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core'
+import { ListItem, ListItemAvatar, ListItemText } from '@material-ui/core'
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import React from 'react';
 import './Todo.css'
 import { List } from '@material-ui/core';
@@ -14,7 +15,7 @@ function Todo(props) {
                 {/* Tenemos que entrar dentro del objeto todo */}
                 <ListItemText primary={props.todo.todo} secondary="TODO: remove" />
             </ListItem>
-            <Button onClick={event => db.collection('todos').doc(props.todo.id).delete()}>Delete</Button>
+            <DeleteForeverIcon onClick={event => db.collection('todos').doc(props.todo.id).delete()} />
         </List>
     )
 }
