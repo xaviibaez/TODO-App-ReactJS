@@ -36,6 +36,8 @@ Material UI:
 
 ### `npm install @material-ui/core`
 
+### `npm i @material-ui/icons`
+
 Initiate your project:
 
 ### `firebase init`
