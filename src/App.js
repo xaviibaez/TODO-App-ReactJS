@@ -6,12 +6,12 @@ import db from './firebase'
 import firebase from 'firebase'
 
 function App() {
-  //Short time memory, al ser volvatil, cuando se añad contenido con el SetTodo, si no se envia a la bbdd se perdera.
+  //Use state -> Short time memory, al ser volvatil, cuando se añad contenido con el SetTodo, si no se envia a la bbdd se perdera.
   //Todos es el array con todas las task
   //SetTodos es la variable que usaremos para añadir task a Todos
   const [todos, setTodos] = useState([])
 
-  //Lo que se ponga en el pinput para añadirlo a la lista
+  //Lo que se ponga en el input para añadirlo a la lista
   const [input, setInput] = useState('')
 
   //Use effect es una funcion que carga los datos por primera vez cuando se entra en el componente 
