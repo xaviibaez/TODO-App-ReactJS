@@ -21,8 +21,9 @@ function App() {
     //onSanpshot -> se lanzara cada vez que la bbdd se modifique
     //docs -> es cada uno de los valores de la bbdd
     db.collection('todos').orderBy('timestamp','desc').onSnapshot(snapshot => {
+      //Pasamos el objeto con el id y el contenido
       //doc.data() -> Array, doc.data().todo -> el valor
-      setTodos(snapshot.docs.map(doc => doc.data().todo));
+      setTodos(snapshot.docs.map(doc => ({id : doc.id, todo: doc.data().todo})));
     })
   }, []);
 
@@ -70,7 +71,7 @@ function App() {
       <ul>
         {todos.map(todo =>(
           //Le pasamos el todo que toque por parametro al componente Todo.js
-          <Todo text={todo} />
+          <Todo todo={todo} />
         ))}
       </ul>
     </div>
