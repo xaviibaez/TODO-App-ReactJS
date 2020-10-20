@@ -22,12 +22,23 @@ const useStyles = makeStyles((theme) => ({
 //Props -> propiedades - Lo que nos viene de App.js en forma de parametro
 function Todo(props) {
     const classes = useStyles();
+    //Variable para saber si el modal esta abierto o no
     const [open, setOpen] = useState(false);
+    //Input del modal para hacer update del todo
+    const [input, setInput] = useState();
 
     const handleOpen = () => {
         setOpen(true);
     };
 
+    //Update todo con el input text
+    const updateTodo = () => {
+        db.collection('todos').doc(props.todo.id).set({
+            todo: input
+        }, { merge: true });
+
+        setOpen(false)
+    }
     return (
         <>
         {/* React fragment */}
@@ -36,7 +47,9 @@ function Todo(props) {
             {/* Importamos el style del modal */}
             <div className={classes.paper}>
                 <h1>Modal</h1>
-                <Button onClick={e => setOpen(false)}>Edit</Button>
+                {/* El valor inicial del input sera el del todo */}
+                <input placeholder={props.todo.todo} input={input} onChange={event => setInput(event.target.value)}/>
+                <Button onClick={updateTodo}>Edit</Button>
             </div>
         </Modal>
         <List className="todo__list">
