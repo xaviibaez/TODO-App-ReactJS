@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Deployed Website:
+## Deployed Website:
 
 https://todo-app-cp-2d17d.web.app/
 
@@ -24,7 +24,9 @@ En la carpeta del proyecto, ejecutamos para la configuracion
 - Hosting: Configure and deploy Firebase Hosting sites
 - Use an existing project
 
+Initiate your project:
 En los archivos .firebaserc y firebase.json podemos modificar estas opciones
+Hosting checked, build write, Single Page APP
 
 ### `firebase init`
 
@@ -32,7 +34,7 @@ Create build
 
 ### `npm run build` 
 
-Deploy on firebase
+Deploy web app:
 
 ### `firebase deploy`
 
@@ -45,14 +47,6 @@ Material UI:
 Material UI icons:
 
 ### `npm i @material-ui/icons`
-
-Initiate your project:
-
-### `firebase init`
-
-Deploy web app:
-
-### `firebase deploy`
 
 In the project directory, you can run:
 
