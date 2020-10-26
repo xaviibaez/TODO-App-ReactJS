@@ -10,7 +10,7 @@ Create React app:
 
 ### `npx create-react-app todo_app`
 
-Firebase Install:
+Firebase Install - '-g' Lo instala en todo el PC:
 
 ### `npm install -g firebase-tools`
 
