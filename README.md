@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Deployed Website:
 
-https://portfolio-app-921a8.web.app
+https://todo-app-cp-2d17d.web.app/
 
 ## Available Scripts
 
